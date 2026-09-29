@@ -1,4 +1,7 @@
-FROM ubuntu:latest
-LABEL authors="Gabriel"
+FROM openjdk:21-jdk-slim
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY target/System_user-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

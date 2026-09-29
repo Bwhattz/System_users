@@ -1,4 +1,4 @@
-package com.gabriel.system_user.security.cryptpassword;
+package com.gabriel.system_user.security.crypt_password;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

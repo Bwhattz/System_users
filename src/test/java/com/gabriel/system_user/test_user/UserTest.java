@@ -1,4 +1,4 @@
-package com.gabriel.system_user.testUser;
+package com.gabriel.system_user.test_user;
 
 import com.gabriel.system_user.model.User;
 import com.gabriel.system_user.repository.UserRepository;

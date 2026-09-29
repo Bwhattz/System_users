@@ -1,4 +1,4 @@
-package com.gabriel.system_user.entity;
+package com.gabriel.system_user.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,11 +15,14 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public final class User {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "id_user", nullable = false, length = 8)
+    private String idUser;
 
     @Column(name = "user_name", nullable = false, length = 120)
     private String name;
@@ -54,9 +57,6 @@ public final class User {
     @Column(name = "user_active", nullable = false)
     private boolean isActive = true;
 
-    @Column(name = "id_user", nullable = false, length = 8)
-    private String idUser;
-
     @PrePersist
     protected void validates() {
 
@@ -71,6 +71,16 @@ public final class User {
             this.age = Period.between(birthdate, LocalDate.now()).getYears();
         } else {
             this.age = 0;
+        }
+
+        if(this.status == null || this.status.isBlank()) {
+            this.status = "ACTIVE";
+        } else {
+            this.status = this.status.trim().toUpperCase();
+        }
+
+        if(this.createdAt == null) {
+            this.createdAt = LocalDateTime.now();
         }
     }
 
