@@ -21,9 +21,8 @@ public record UserRequest(
 
         @NotBlank(message = "A senha é obrigátoria")
         @Size(min = 6, message = "A senha precisa conter 11 caracteres")
-        @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=[@$!%*?&])[A-Za-z\\\\d@$!%*?&]{6,}$",
+        @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,}$",
                 message = "A senha precisa conter pelo menos um caracter maiúscula, uma minúscula e um caracter especial")
-        @Autowired
         String password,
 
         @NotBlank(message = "O cpf é obrigátorio")

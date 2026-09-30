@@ -96,4 +96,16 @@ public class UserTest {
 
         verify(userRepository, times(1)).save(any(User.class));
     }
+
+    @Test
+    @DisplayName("Deleter usuário")
+    void delete() {
+
+        lenient().doNothing().when(userRepository).deleteById(1L);
+
+        userService.delete(1L);
+
+        verify(userRepository, times(1)).deleteById(1L);
+
+    }
 }

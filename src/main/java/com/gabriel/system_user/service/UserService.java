@@ -37,7 +37,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    List<User> findAll() {
+    public List<User> findAll() {
         return userRepository.findAll();
     }
 
