@@ -86,31 +86,31 @@ public class User {
 
     public void updateEntity(User userUpdate) {
 
-        if(this.getName() != null) {
+        if(userUpdate.getName() != null) {
             this.name = userUpdate.getName();
         }
 
-        if(this.getLastName() != null) {
+        if(userUpdate.getLastName() != null) {
             this.lastName = userUpdate.getLastName();
         }
 
-        if(this.getEmail() != null) {
+        if(userUpdate.getEmail() != null) {
             this.email = userUpdate.getEmail();
         }
 
-        if(this.password != null) {
+        if(userUpdate.password != null) {
             this.password = userUpdate.getPassword();
         }
 
-        if(this.cpf != null) {
+        if(userUpdate.getCpf() != null) {
             this.cpf = userUpdate.getCpf();
         }
 
-        if(this.telephone != null) {
+        if(userUpdate.getTelephone() != null) {
             this.telephone = userUpdate.getTelephone();
         }
 
-        if(this.birthdate != null) {
+        if(userUpdate.getBirthdate() != null) {
             this.birthdate = userUpdate.getBirthdate();
         }
 
